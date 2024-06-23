@@ -1,0 +1,139 @@
+(footprint "T31000"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -4.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "9809c36c-c269-4577-8121-019663455e01")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "T31000"
+		(at 0 4.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "38d500af-3154-4d48-abb9-785a01bcde77")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d59bd4e4-47e9-476e-b3e8-335f365ccc39")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9f639c0c-5313-43e6-8b94-dcec1b1da200")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a4ae5aa3-64fe-4ea5-b1fa-17b1ad077c5b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -3 -3)
+		(end -3 3)
+		(stroke
+			(width 0.16)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "76527def-40ab-43ca-b992-3e4747bb48aa")
+	)
+	(fp_line
+		(start -3 -3)
+		(end -2.2 -3)
+		(stroke
+			(width 0.16)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "871a6597-0d09-4d93-9329-ba9ce3310f25")
+	)
+	(fp_line
+		(start -3 3)
+		(end -2.2 3)
+		(stroke
+			(width 0.16)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a0c0a6ce-d85d-4756-806d-5be004ea950d")
+	)
+	(fp_line
+		(start 3 -3)
+		(end 2.2 -3)
+		(stroke
+			(width 0.16)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ead2d3c6-c5bb-492b-913f-1295192c47d1")
+	)
+	(fp_line
+		(start 3 -3)
+		(end 3 3)
+		(stroke
+			(width 0.16)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "cda1a72f-4331-4658-8901-6ce3ee9e723c")
+	)
+	(fp_line
+		(start 3 3)
+		(end 2.2 3)
+		(stroke
+			(width 0.16)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "3e89ad39-4145-41c9-80b7-8494a6e5ac19")
+	)
+	(pad "1" thru_hole oval
+		(at 0 0)
+		(size 5 7.7)
+		(drill oval 1.6 7.6)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "0a3be628-2002-4d6c-b999-17949ca22aee")
+	)
+)

@@ -1,0 +1,6 @@
+/*/*-backups/**
+/*/jlcpcb/gerber/**
+/*/jlcpcb/production_files/**
+/*/fp-info-cache
+/*/*.kicad_sch_old
+/**/*.log
