@@ -1,0 +1,14 @@
+; Cycle: 6 instructions
+; ISR: right shift
+; FIFO: join RX
+
+
+.program hadc
+.side_set 1
+
+.wrap_target
+    in      null, 20    side 1  [1]
+    push    noblock     side 0
+PUBLIC entry:
+    in      pins, 12    side 0
+.wrap
