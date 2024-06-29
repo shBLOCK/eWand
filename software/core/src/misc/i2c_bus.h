@@ -1,5 +1,4 @@
-#ifndef EWANDCORE_I2C_BUS_H
-#define EWANDCORE_I2C_BUS_H
+#pragma once
 
 #include "hardware/i2c.h"
 
@@ -18,5 +17,3 @@ static inline uint8_t i2c_bus_read_reg8(uint8_t addr, uint8_t reg, bool nostop) 
     i2c_read_blocking(I2C_BUS_INST, addr, &result, 1, nostop);
     return result;
 }
-
-#endif //EWANDCORE_I2C_BUS_H

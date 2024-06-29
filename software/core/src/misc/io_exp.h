@@ -1,5 +1,4 @@
-#ifndef EWANDCORE_IO_EXP_H
-#define EWANDCORE_IO_EXP_H
+#pragma once
 
 #include "misc/i2c_bus.h"
 #include "utils/utils.h"
@@ -29,5 +28,3 @@ static inline void io_exp_set_dir(uint pin, bool output) {
     reg_dir = bit_put(reg_dir, pin, output);
     i2c_bus_write_reg8(IO_EXP_ADDR, 0x03, reg_dir, false);
 }
-
-#endif //EWANDCORE_IO_EXP_H

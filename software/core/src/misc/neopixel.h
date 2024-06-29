@@ -1,5 +1,4 @@
-#ifndef NEOPIXEL_H
-#define NEOPIXEL_H
+#pragma once
 
 #include <stdio.h>
 
@@ -20,5 +19,3 @@ static inline uint32_t neopixel_get(const uint index) {
 }
 
 void neopixel_upload();
-
-#endif //NEOPIXEL_H

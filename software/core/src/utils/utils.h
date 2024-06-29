@@ -1,5 +1,4 @@
-#ifndef EWANDCORE_UTILS_H
-#define EWANDCORE_UTILS_H
+#pragma once
 
 #include "pico/stdlib.h"
 
@@ -24,5 +23,3 @@ __force_inline uint bit_clear(uint num, uint bit) {
 __force_inline bool bit_get(uint num, uint bit) {
     return num & (1 << bit);
 }
-
-#endif //EWANDCORE_UTILS_H
