@@ -1,0 +1,37 @@
+;
+; Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
+;
+; SPDX-License-Identifier: BSD-3-Clause
+;
+
+.program neopixel
+.side_set 1
+
+.define public T1 2
+.define public T2 4
+.define public T3 4
+
+.define public PULL_THRESHOLD 24
+
+.define RST_DELAY 10
+.define RST_LOOPS_OUTER 8
+.define RST_LOOPS_INNER 20
+
+.wrap_target
+top:
+    jmp y-- bit             side 0
+    set x, RST_LOOPS_OUTER  side 0
+loop_o:
+    set y, RST_LOOPS_INNER  side 0
+loop_i:
+    jmp y-- loop_i          side 0  [RST_DELAY - 1]
+    jmp x-- loop_o          side 0
+    out y, PULL_THRESHOLD   side 0 ; Transfer bit count
+bit:
+    out x, 1                side 0  [T3 - 2] ; Side-set still takes place when instruction stalls
+    jmp !x do_zero          side 1  [T1 - 1] ; Branch on the bit we shifted out. Positive pulse
+do_one:
+    jmp top                 side 1  [T2 - 1] ; Continue driving high, for a long pulse
+do_zero:
+    nop                     side 0  [T2 - 1] ; Or drive low, for a short pulse
+.wrap
