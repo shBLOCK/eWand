@@ -107,7 +107,7 @@ void hadc_init() {
     dma_channel_start(HADC_DMA_ACC[0]);
 }
 
-void hadc_set_enable(bool enable) {
+void hadc_set_enable(const bool enable) {
     io_exp_put(HADC_EXPPIN_PDWN, !enable);
     if (enable) sleep_ms(3);
 }

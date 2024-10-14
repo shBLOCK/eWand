@@ -1,6 +1,7 @@
-#ifndef EWANDCORE_HADC_H
-#define EWANDCORE_HADC_H
+#pragma once
 
 void hadc_init();
 
-#endif //EWANDCORE_HADC_H
+void hadc_set_enable(bool enable);
+
+void hadc_capture_snapshot();

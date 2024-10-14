@@ -5,13 +5,13 @@
  * Refer to: /hardware/etc/TPS55288 Design Calculation V1.0.xlsx
  */
 
+#include <math.h>
 #include "pico/stdlib.h"
-#include "pico/float.h"
 #include "misc/i2c_bus.h"
 
-#include "dcdc.h"
-
 #include <utils/utils.h>
+
+#include "dcdc.h"
 
 #define ADDR 0x74
 
@@ -27,8 +27,8 @@
 #define REG_MODE_VALUE_NO_OE 0x39
 
 void dcdc_init() {
-    i2c_bus_write_reg8(ADDR, REG_I_LIMIT, 0xE4);
-    i2c_bus_write_reg8(ADDR, REG_VOUT_SR, 0x01);
+    i2c_bus_write_reg8(ADDR, REG_I_LIMIT, 0xFF);
+    i2c_bus_write_reg8(ADDR, REG_VOUT_SR, 0x31);
     i2c_bus_write_reg8(ADDR, REG_VOUT_FS, 0x03);
     i2c_bus_write_reg8(ADDR, REG_CDC, 0xE0);
     i2c_bus_write_reg8(ADDR, REG_MODE, REG_MODE_VALUE_NO_OE);

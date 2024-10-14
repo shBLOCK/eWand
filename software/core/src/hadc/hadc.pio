@@ -2,7 +2,6 @@
 ; ISR: right shift
 ; FIFO: join RX
 
-
 .program hadc
 .side_set 1
 

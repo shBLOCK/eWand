@@ -530,7 +530,7 @@
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
-      "svg": "",
+      "svg": "C:/Users/33329/Pictures/",
       "vrml": ""
     },
     "page_layout_descr_file": "${KIPRJMOD}/../../lib/blank.kicad_wks"
@@ -650,7 +650,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "C:/Users/33329/Pictures/",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,

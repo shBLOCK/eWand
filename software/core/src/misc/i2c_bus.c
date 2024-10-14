@@ -1,4 +1,5 @@
 #include "pico/stdlib.h"
+#include "pico/sync.h"
 #include "utils/utils.h"
 
 #include "i2c_bus.h"
@@ -9,12 +10,16 @@
 #define I2C_BUS_PIN_SCL 15
 #define I2C_BUS_FREQ (100 * 1000)
 
+critical_section_t i2c_bus_critical_section;
+
 void i2c_bus_init() {
     i2c_init(I2C_BUS_INST, I2C_BUS_FREQ);
     gpio_set_function(I2C_BUS_PIN_SDA, GPIO_FUNC_I2C);
     gpio_set_function(I2C_BUS_PIN_SCL, GPIO_FUNC_I2C);
     gpio_strong_output(I2C_BUS_PIN_SDA);
     gpio_strong_output(I2C_BUS_PIN_SCL);
+
+    critical_section_init(&i2c_bus_critical_section);
 }
 
 void i2c_bus_debug_scan() {
@@ -41,12 +46,14 @@ void i2c_bus_debug_scan() {
         int ret;
         uint8_t rxdata;
         uint8_t tmp = 1;
-        if ((addr & 0x78) == 0 || (addr & 0x78) == 0x78) // reserved
+        if ((addr & 0x78) == 0 || (addr & 0x78) == 0x78) {
+            // reserved
             ret = PICO_ERROR_GENERIC;
-        else
-            //TODO: should use a 0-length write here
+        } else {
+            //TODO: should use a 0-length read here
             i2c_write_blocking(I2C_BUS_INST, addr, &tmp, 1, true);
             ret = i2c_read_blocking(I2C_BUS_INST, addr, &rxdata, 1, false);
+        }
 
         printf(ret < 0 ? "." : "@");
         printf(addr % 16 == 15 ? "\n" : "  ");

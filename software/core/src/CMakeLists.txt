@@ -6,9 +6,8 @@ add_executable(ewand_core
         misc/io_exp.c
         misc/i2c_bus.c
         misc/neopixel.c
-        misc/neopixel.h
-        misc/tps55288.c
-        misc/tps55288.h
+        dcdc/dcdc.c
+        misc/power_monitor.c
 )
 
 pico_generate_pio_header(ewand_core ${CMAKE_CURRENT_LIST_DIR}/hadc/hadc.pio)
@@ -23,8 +22,9 @@ target_link_libraries(ewand_core PRIVATE
         pico_sync
         pico_multicore
         pico_rand
-        pico_float
         pico_time
+        hardware_watchdog
+        hardware_vreg
 )
 
 target_include_directories(ewand_core PRIVATE
